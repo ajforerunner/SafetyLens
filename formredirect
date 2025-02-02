@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Questions</title>
+    <script>
+        function showStep2(option) {
+            document.getElementById("step1").style.display = "none";
+            document.getElementById(option).style.display = "block";
+        }
+
+        function goToLink(link) {
+            window.open(link, "_blank");
+        }
+    </script>
+</head>
+<body>
+    <div id="step1">
+        <h2>Select a Question:</h2>
+        <button onclick="showStep2('step2a')">Question 1</button>
+        <button onclick="showStep2('step2b')">Question 2</button>
+    </div>
+
+    <div id="step2a" style="display:none;">
+        <h2>Follow-up for Question 1:</h2>
+        <button onclick="goToLink('https://link1.com')">Option A</button>
+        <button onclick="goToLink('https://link2.com')">Option B</button>
+    </div>
+
+    <div id="step2b" style="display:none;">
+        <h2>Follow-up for Question 2:</h2>
+        <button onclick="goToLink('https://link3.com')">Option C</button>
+        <button onclick="goToLink('https://link4.com')">Option D</button>
+    </div>
+</body>
+</html>
