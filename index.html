@@ -1,35 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Questions</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f4f6;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #333333;
+            margin-bottom: 24px;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            font-size: 1rem;
+            color: #ffffff;
+            background: #6366f1;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .button:hover {
+            background: #4f46e5;
+        }
+        .back-button {
+            position: absolute;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #e5e7eb;
+            color: #374151;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .back-button:hover {
+            background: #d1d5db;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
     <script>
         function showStep2(option) {
-            document.getElementById("step1").style.display = "none";
-            document.getElementById(option).style.display = "block";
+            document.getElementById("step1").classList.add("hidden");
+            document.getElementById(option).classList.remove("hidden");
         }
 
         function goToLink(link) {
             window.open(link, "_blank");
         }
+
+        function goBack() {
+            document.querySelectorAll('.card').forEach(card => card.classList.add("hidden"));
+            document.getElementById("step1").classList.remove("hidden");
+        }
     </script>
 </head>
 <body>
-    <div id="step1">
+    <div class="card" id="step1">
         <h2>Select a Question:</h2>
-        <button onclick="showStep2('step2a')">Question 1</button>
-        <button onclick="showStep2('step2b')">Question 2</button>
+        <button class="button" onclick="showStep2('step2a')">Question 1</button>
+        <button class="button" onclick="showStep2('step2b')">Question 2</button>
     </div>
 
-    <div id="step2a" style="display:none;">
+    <div class="card hidden" id="step2a">
+        <button class="back-button" onclick="goBack()">Back</button>
         <h2>Follow-up for Question 1:</h2>
-        <button onclick="goToLink('https://link1.com')">Option A</button>
-        <button onclick="goToLink('https://link2.com')">Option B</button>
+        <button class="button" onclick="goToLink('https://link1.com')">Option A</button>
+        <button class="button" onclick="goToLink('https://link2.com')">Option B</button>
     </div>
 
-    <div id="step2b" style="display:none;">
+    <div class="card hidden" id="step2b">
+        <button class="back-button" onclick="goBack()">Back</button>
         <h2>Follow-up for Question 2:</h2>
-        <button onclick="goToLink('https://link3.com')">Option C</button>
-        <button onclick="goToLink('https://link4.com')">Option D</button>
+        <button class="button" onclick="goToLink('https://link3.com')">Option C</button>
+        <button class="button" onclick="goToLink('https://link4.com')">Option D</button>
     </div>
 </body>
 </html>
