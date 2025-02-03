@@ -46,6 +46,12 @@
         .button:hover {
             background: #4f46e5;
         }
+        .download-button {
+            background: #df81c3;
+        }
+        .download-button:hover {
+            background: #c76aa8;
+        }
         .back-button {
             position: absolute;
             top: 13px;
@@ -65,6 +71,16 @@
         }
         .hidden {
             display: none;
+        }
+        .note {
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: #555555;
+            text-align: middle;
+        }
+        .small-text {
+            font-size: 0.9rem;
+            color: #444;
         }
     </style>
     <script>
@@ -95,6 +111,10 @@
         <h2>Safety Lens: select device type</h2>
         <button class="button" onclick="goToLink('ms-apps:///providers/Microsoft.PowerApps/apps/1e7073b4-7a32-44dd-a468-8fbbcba0813b')">Mobile version</button>
         <button class="button" onclick="goToLink('https://apps.powerapps.com/play/e/default-09ebfde1-6505-4c31-942f-18875ff0189d/a/1e7073b4-7a32-44dd-a468-8fbbcba0813b?tenantId=09ebfde1-6505-4c31-942f-18875ff0189d&hint=d67798b2-1cf6-4b97-afea-0ff08e7c88a3&sourcetime=1730454091988')">Web version</button>
+        <hr>
+        <h2 class="small-text">If you do not have Power Apps installed on your mobile, please click below:</h2>
+        <button class="button download-button" onclick="goToLink('https://play.google.com/store/apps/details?id=com.microsoft.msapps')">Download Power Apps</button>
+        <div class="note">Please ensure you use your Equans work phone and account.</div>
     </div>
 
     <div class="card hidden" id="step2b">
