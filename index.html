@@ -54,20 +54,20 @@
         }
         .back-button {
             position: absolute;
-            top: 13px;
+            top: 12px;
             left: 50%;
-            transform: translateX(-50%);
-            background: #e5e7eb;
+            transform: translateX(-55%);
+            background: #bfdbfe;
             color: #374151;
-            padding: 6px 12px;
+            padding: 2px 14px;
             border: none;
-            border-radius: 6px;
-            font-size: 0.8rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
             cursor: pointer;
             transition: background 0.3s ease;
         }
         .back-button:hover {
-            background: #d1d5db;
+            background: #fde68a;
         }
         .hidden {
             display: none;
@@ -76,7 +76,7 @@
             margin-top: 16px;
             font-size: 0.85rem;
             color: #555555;
-            text-align: middle;
+            text-align: CENTER;
         }
         .small-text {
             font-size: 0.9rem;
@@ -107,7 +107,7 @@
     </div>
 
     <div class="card hidden" id="step2a">
-        <button class="back-button" onclick="goBack()">Back</button>
+        <button class="back-button" onclick="goBack()">◀️ Back</button>
         <h2>Safety Lens: select device type</h2>
         <button class="button" onclick="goToLink('ms-apps:///providers/Microsoft.PowerApps/apps/1e7073b4-7a32-44dd-a468-8fbbcba0813b')">Mobile version</button>
         <button class="button" onclick="goToLink('https://apps.powerapps.com/play/e/default-09ebfde1-6505-4c31-942f-18875ff0189d/a/1e7073b4-7a32-44dd-a468-8fbbcba0813b?tenantId=09ebfde1-6505-4c31-942f-18875ff0189d&hint=d67798b2-1cf6-4b97-afea-0ff08e7c88a3&sourcetime=1730454091988')">Web version</button>
